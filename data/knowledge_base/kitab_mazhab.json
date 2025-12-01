@@ -1,0 +1,443 @@
+{
+  "metadata": {
+    "title": "Kitab Imam Mazhab - Database Pengetahuan",
+    "version": "1.0.0",
+    "description": "Kompilasi ajaran empat mazhab besar dalam Islam",
+    "created": "2024-01-01"
+  },
+  "mazhab": {
+    "hanafi": {
+      "imam": {
+        "nama": "Abu Hanifah Nu'man bin Tsabit",
+        "lahir": "80 H / 699 M di Kufah, Irak",
+        "wafat": "150 H / 767 M di Baghdad",
+        "gelar": "Al-Imam Al-A'zham (Imam Terbesar)",
+        "guru": ["Hammad bin Abi Sulaiman", "Atha' bin Abi Rabah", "Nafi' Maula Ibn Umar"],
+        "murid_utama": ["Abu Yusuf", "Muhammad bin Hasan al-Syaibani", "Zufar bin Hudzail"],
+        "biografi": "Imam Abu Hanifah adalah pendiri mazhab Hanafi dan dikenal sebagai Imam Terbesar. Beliau terkenal dengan kecerdasan dan ketajaman logikanya dalam istinbath hukum. Lahir dari keluarga pedagang tekstil, beliau menguasai fiqih dan menjadi rujukan utama di Irak."
+      },
+      "metodologi": {
+        "sumber_hukum": [
+          "Al-Quran sebagai sumber utama",
+          "Hadits yang shahih dan masyhur",
+          "Ijma' Sahabat",
+          "Qiyas (analogi logis)",
+          "Istihsan (preferensi hukum)",
+          "Urf (adat kebiasaan yang baik)"
+        ],
+        "ciri_khas": "Mazhab Hanafi dikenal dengan penggunaan ra'yu (akal) yang luas dalam istinbath hukum dan penerapan qiyas serta istihsan. Mazhab ini sangat mempertimbangkan konteks sosial dan kemudahan dalam beribadah.",
+        "prinsip_utama": [
+          "Memberikan ruang luas untuk ijtihad dan ra'yu",
+          "Mengutamakan kemudahan (taysir) dalam hukum",
+          "Mempertimbangkan adat dan kebiasaan masyarakat",
+          "Fleksibilitas dalam penerapan hukum"
+        ]
+      },
+      "kitab_utama": [
+        {
+          "judul": "Al-Mabsuth",
+          "penulis": "Al-Sarakhsi",
+          "deskripsi": "Ensiklopedia fiqih Hanafi yang sangat komprehensif dalam 30 jilid"
+        },
+        {
+          "judul": "Badai' al-Shanai'",
+          "penulis": "Al-Kasani",
+          "deskripsi": "Kitab fiqih sistematis yang menjelaskan hikmah hukum"
+        },
+        {
+          "judul": "Al-Hidayah",
+          "penulis": "Al-Marghinani",
+          "deskripsi": "Kitab fiqih standar yang menjadi rujukan utama dalam mazhab Hanafi"
+        },
+        {
+          "judul": "Fath al-Qadir",
+          "penulis": "Ibn al-Humam",
+          "deskripsi": "Syarah Al-Hidayah yang sangat mendalam"
+        }
+      ],
+      "hukum_fiqih": {
+        "thaharah": {
+          "wudhu": {
+            "rukun": ["Membasuh wajah", "Membasuh kedua tangan sampai siku", "Mengusap sebagian kepala (1/4)", "Membasuh kedua kaki sampai mata kaki"],
+            "yang_membatalkan": ["Keluar sesuatu dari qubul atau dubur", "Tidur berbaring", "Hilang akal karena gila atau mabuk", "Tertawa terbahak-bahak dalam shalat"],
+            "catatan": "Dalam mazhab Hanafi, mengusap kepala cukup 1/4 bagian kepala"
+          },
+          "mandi_wajib": {
+            "sebab": ["Junub", "Haidh", "Nifas", "Masuk Islam"],
+            "rukun": ["Berkumur", "Istinsyaq (memasukkan air ke hidung)", "Membasuh seluruh tubuh"]
+          },
+          "tayammum": {
+            "syarat": ["Tidak ada air", "Sakit yang berbahaya jika terkena air", "Air terlalu jauh"],
+            "cara": "Menepukkan tangan ke tanah/debu, mengusap wajah, lalu menepukkan lagi dan mengusap kedua tangan sampai siku"
+          }
+        },
+        "shalat": {
+          "waktu": {
+            "subuh": "Dari terbit fajar shadiq sampai terbit matahari",
+            "zhuhur": "Dari tergelincir matahari sampai bayangan sama panjang dengan benda",
+            "ashar": "Dari bayangan 2x panjang benda sampai terbenam matahari",
+            "maghrib": "Dari terbenam matahari sampai hilang syafaq (mega merah)",
+            "isya": "Dari hilang syafaq sampai terbit fajar shadiq"
+          },
+          "rukun": ["Takbiratul ihram", "Berdiri bagi yang mampu", "Membaca Al-Fatihah", "Ruku'", "Sujud dua kali", "Duduk akhir", "Salam"],
+          "sunnah_muakkadah": ["Azan", "Iqamah", "Membaca surat setelah Al-Fatihah", "Qunut di witir", "Takbir hari raya"],
+          "catatan_khusus": "Dalam mazhab Hanafi, membaca basmalah dengan pelan dan tidak mengeraskan amin"
+        },
+        "zakat": {
+          "nisab_emas": "20 mitsqal (85 gram)",
+          "nisab_perak": "200 dirham (595 gram)",
+          "kadar": "2.5% (1/40)",
+          "haul": "Satu tahun hijriah",
+          "mustahiq": ["Fakir", "Miskin", "Amil", "Muallaf", "Riqab", "Gharimin", "Fisabilillah", "Ibnu Sabil"]
+        },
+        "puasa": {
+          "rukun": ["Niat di malam hari", "Menahan diri dari yang membatalkan dari terbit fajar sampai terbenam matahari"],
+          "yang_membatalkan": ["Makan dan minum sengaja", "Hubungan suami istri", "Muntah sengaja", "Haidh dan nifas"],
+          "catatan": "Mazhab Hanafi membolehkan niat puasa Ramadhan sampai waktu dhuha"
+        },
+        "haji": {
+          "rukun": ["Ihram", "Wukuf di Arafah", "Thawaf ifadhah", "Sa'i"],
+          "wajib": ["Ihram dari miqat", "Bermalam di Muzdalifah", "Bermalam di Mina", "Melempar jumrah", "Thawaf wada'"],
+          "catatan": "Dam (denda) wajib jika meninggalkan wajib haji"
+        },
+        "muamalah": {
+          "jual_beli": {
+            "syarat_sah": ["Ada penjual dan pembeli", "Ada barang dan harga", "Sighat (ijab qabul)"],
+            "yang_dilarang": ["Riba", "Gharar (ketidakjelasan)", "Maysir (judi)", "Jual beli barang haram"]
+          },
+          "nikah": {
+            "rukun": ["Calon suami", "Calon istri", "Wali", "Dua saksi", "Ijab qabul"],
+            "catatan": "Mazhab Hanafi membolehkan wanita baligh menikahkan dirinya tanpa wali"
+          }
+        }
+      },
+      "penyebaran": ["Turki", "Asia Tengah", "Pakistan", "India", "Bangladesh", "Afghanistan", "Mesir", "Irak", "Suriah"]
+    },
+    "maliki": {
+      "imam": {
+        "nama": "Malik bin Anas bin Malik",
+        "lahir": "93 H / 711 M di Madinah",
+        "wafat": "179 H / 795 M di Madinah",
+        "gelar": "Imam Dar al-Hijrah (Imam Negeri Hijrah)",
+        "guru": ["Nafi' Maula Ibn Umar", "Ibn Syihab al-Zuhri", "Rabi'ah al-Ra'y"],
+        "murid_utama": ["Imam Syafi'i", "Ibn Wahb", "Ibn al-Qasim", "Asyhab"],
+        "biografi": "Imam Malik adalah imam mazhab kedua yang lahir dan wafat di Madinah. Beliau tidak pernah meninggalkan Madinah kecuali untuk haji. Dikenal dengan keteguhannya dalam mengikuti amalan penduduk Madinah sebagai sumber hukum."
+      },
+      "metodologi": {
+        "sumber_hukum": [
+          "Al-Quran",
+          "Hadits (termasuk hadits mursal dan dhaif untuk fadhail)",
+          "Amal Ahl al-Madinah (amalan penduduk Madinah)",
+          "Ijma'",
+          "Qiyas",
+          "Maslahah Mursalah",
+          "Sad al-Dzari'ah (menutup jalan kerusakan)",
+          "Urf"
+        ],
+        "ciri_khas": "Mazhab Maliki sangat mengutamakan amalan penduduk Madinah karena mereka mewarisi praktik langsung dari Rasulullah SAW. Juga menggunakan maslahah mursalah secara luas.",
+        "prinsip_utama": [
+          "Amalan penduduk Madinah sebagai sumber hukum",
+          "Maslahah mursalah untuk kemaslahatan umum",
+          "Sad al-dzari'ah untuk mencegah kerusakan",
+          "Kehati-hatian dalam menerima hadits"
+        ]
+      },
+      "kitab_utama": [
+        {
+          "judul": "Al-Muwaththa'",
+          "penulis": "Imam Malik",
+          "deskripsi": "Kitab hadits dan fiqih tertua yang disusun secara sistematis, berisi hadits dan fatwa"
+        },
+        {
+          "judul": "Al-Mudawwanah al-Kubra",
+          "penulis": "Sahnun",
+          "deskripsi": "Kitab fiqih utama mazhab Maliki yang komprehensif"
+        },
+        {
+          "judul": "Bidayat al-Mujtahid",
+          "penulis": "Ibn Rusyd",
+          "deskripsi": "Kitab fiqih perbandingan yang sangat penting"
+        },
+        {
+          "judul": "Al-Risalah",
+          "penulis": "Ibn Abi Zaid al-Qairawani",
+          "deskripsi": "Ringkasan fiqih Maliki yang populer untuk pemula"
+        }
+      ],
+      "hukum_fiqih": {
+        "thaharah": {
+          "wudhu": {
+            "fardhu": ["Niat", "Membasuh wajah", "Membasuh kedua tangan sampai siku", "Mengusap seluruh kepala", "Membasuh kedua kaki", "Menggosok (dalk)", "Muwalah (berturut-turut)"],
+            "catatan": "Mazhab Maliki mewajibkan mengusap seluruh kepala dan menggosok anggota wudhu"
+          },
+          "mandi_wajib": {
+            "fardhu": ["Niat", "Menggosok seluruh badan", "Meratakan air ke seluruh tubuh"],
+            "catatan": "Tidak wajib berkumur dan istinsyaq dalam mandi wajib"
+          }
+        },
+        "shalat": {
+          "rukun": ["Niat", "Takbiratul ihram", "Berdiri", "Membaca Al-Fatihah", "Ruku'", "I'tidal", "Sujud", "Duduk antara dua sujud", "Salam", "Tuma'ninah", "Tertib"],
+          "sunnah_ab'adh": ["Membaca surat setelah Al-Fatihah", "Qunut di Subuh", "Tahiyyat awal"],
+          "catatan": "Dalam mazhab Maliki, tangan dilepas (sadl) di samping badan saat shalat, bukan disedekap"
+        },
+        "zakat": {
+          "catatan_khusus": "Mazhab Maliki sangat detail dalam zakat pertanian dan peternakan"
+        },
+        "puasa": {
+          "catatan_khusus": "Niat puasa Ramadhan harus di malam hari sebelum fajar"
+        },
+        "nikah": {
+          "rukun": ["Wali", "Mahar", "Suami", "Istri", "Sighat"],
+          "catatan": "Wali mutlak diperlukan, tanpa wali nikah tidak sah"
+        }
+      },
+      "penyebaran": ["Maroko", "Aljazair", "Tunisia", "Libya", "Mauritania", "Sudan", "Afrika Barat", "Spanyol (historis)"]
+    },
+    "syafii": {
+      "imam": {
+        "nama": "Muhammad bin Idris al-Syafi'i",
+        "lahir": "150 H / 767 M di Gaza, Palestina",
+        "wafat": "204 H / 820 M di Mesir",
+        "gelar": "Nashir al-Sunnah (Pembela Sunnah)",
+        "guru": ["Imam Malik", "Muslim bin Khalid al-Zanji", "Sufyan bin Uyainah"],
+        "murid_utama": ["Ahmad bin Hanbal", "Al-Muzani", "Al-Buwaithi", "Al-Rabi' bin Sulaiman"],
+        "biografi": "Imam Syafi'i adalah pendiri ilmu ushul fiqih dan penghubung antara mazhab ahli hadits dan ahli ra'yu. Beliau belajar kepada Imam Malik di Madinah dan ulama Irak. Dikenal dengan kecerdasan dan kemampuan debatnya yang luar biasa."
+      },
+      "metodologi": {
+        "sumber_hukum": [
+          "Al-Quran",
+          "Hadits Shahih (tidak membedakan amalan penduduk Madinah)",
+          "Ijma'",
+          "Qiyas",
+          "Qaul Shahabi (pendapat sahabat) dalam kondisi tertentu"
+        ],
+        "ciri_khas": "Imam Syafi'i menyusun ilmu ushul fiqih secara sistematis dalam kitab Al-Risalah. Beliau menggabungkan pendekatan ahli hadits Hijaz dan ahli ra'yu Irak secara seimbang.",
+        "prinsip_utama": [
+          "Sistematisasi ushul fiqih",
+          "Hadits shahih lebih utama dari qiyas",
+          "Menolak istihsan dan amalan penduduk Madinah sebagai hujjah",
+          "Qaul qadim (pendapat lama di Irak) dan qaul jadid (pendapat baru di Mesir)"
+        ]
+      },
+      "kitab_utama": [
+        {
+          "judul": "Al-Umm",
+          "penulis": "Imam Syafi'i",
+          "deskripsi": "Kitab fiqih utama karya Imam Syafi'i sendiri"
+        },
+        {
+          "judul": "Al-Risalah",
+          "penulis": "Imam Syafi'i",
+          "deskripsi": "Kitab ushul fiqih pertama yang disusun secara sistematis"
+        },
+        {
+          "judul": "Al-Majmu' Syarh al-Muhadzdzab",
+          "penulis": "Imam Nawawi",
+          "deskripsi": "Ensiklopedia fiqih Syafi'i yang sangat komprehensif"
+        },
+        {
+          "judul": "Minhaj al-Thalibin",
+          "penulis": "Imam Nawawi",
+          "deskripsi": "Ringkasan fiqih Syafi'i yang menjadi rujukan standar"
+        },
+        {
+          "judul": "Fath al-Wahhab",
+          "penulis": "Zakariya al-Anshari",
+          "deskripsi": "Syarah Minhaj yang sangat populer"
+        },
+        {
+          "judul": "I'anah al-Thalibin",
+          "penulis": "Al-Dimyathi",
+          "deskripsi": "Kitab fiqih praktis yang banyak digunakan di pesantren"
+        }
+      ],
+      "hukum_fiqih": {
+        "thaharah": {
+          "wudhu": {
+            "rukun": ["Niat", "Membasuh wajah", "Membasuh kedua tangan sampai siku", "Mengusap sebagian kepala", "Membasuh kedua kaki sampai mata kaki", "Tertib"],
+            "sunnah": ["Membaca basmalah", "Mencuci tangan sebelum memasukkan ke bejana", "Berkumur", "Istinsyaq", "Menyela jenggot", "Menyela jari", "Mendahulukan kanan", "Tiga kali-tiga kali", "Mengusap kedua telinga", "Doa setelah wudhu"],
+            "yang_membatalkan": ["Keluar sesuatu dari qubul atau dubur", "Hilang akal", "Bersentuhan kulit laki-laki dan perempuan tanpa penghalang (bukan mahram)", "Menyentuh kemaluan dengan telapak tangan"]
+          },
+          "mandi_wajib": {
+            "rukun": ["Niat", "Meratakan air ke seluruh tubuh termasuk rambut"],
+            "catatan": "Wajib menyela rambut sampai ke kulit kepala"
+          },
+          "tayammum": {
+            "rukun": ["Niat", "Mengusap wajah dengan debu", "Mengusap kedua tangan sampai siku dengan debu", "Tertib"],
+            "syarat_debu": "Debu yang suci dan belum dipakai tayammum"
+          }
+        },
+        "shalat": {
+          "rukun": ["Niat", "Takbiratul ihram", "Berdiri bagi yang mampu", "Membaca Al-Fatihah", "Ruku' dengan tuma'ninah", "I'tidal dengan tuma'ninah", "Sujud dengan tuma'ninah", "Duduk antara dua sujud dengan tuma'ninah", "Duduk tasyahhud akhir", "Membaca tasyahhud akhir", "Shalawat Nabi di tasyahhud akhir", "Salam pertama", "Tertib"],
+          "sunnah_ab'adh": ["Tasyahhud awal", "Qunut di shalat Subuh", "Berdiri dari tasyahhud awal"],
+          "sunnah_hai'at": ["Mengangkat tangan saat takbir", "Meletakkan tangan kanan di atas tangan kiri di dada", "Doa iftitah", "Ta'awwudz", "Membaca amin dengan keras di shalat jahriyyah"],
+          "catatan": "Dalam mazhab Syafi'i, bersentuhan kulit dengan lawan jenis membatalkan wudhu"
+        },
+        "zakat": {
+          "jenis": ["Zakat fitrah", "Zakat mal (harta)", "Zakat pertanian", "Zakat emas perak", "Zakat perdagangan", "Zakat rikaz"],
+          "nisab_emas": "85 gram",
+          "zakat_fitrah": "3,5 liter atau 2,5 kg makanan pokok",
+          "waktu_fitrah": "Wajib sebelum shalat Ied, boleh dimajukan sejak awal Ramadhan"
+        },
+        "puasa": {
+          "rukun": ["Niat di malam hari", "Menahan diri dari yang membatalkan di siang hari"],
+          "yang_membatalkan": ["Makan minum sengaja", "Muntah sengaja", "Hubungan suami istri", "Keluar mani dengan sengaja", "Haidh dan nifas", "Gila", "Murtad"],
+          "catatan": "Niat puasa Ramadhan wajib setiap malam, tidak cukup sekali di awal bulan"
+        },
+        "haji": {
+          "rukun": ["Ihram dengan niat", "Wukuf di Arafah", "Thawaf ifadhah", "Sa'i", "Mencukur/memotong rambut", "Tertib sebagian rukun"],
+          "wajib": ["Ihram dari miqat", "Bermalam di Muzdalifah", "Bermalam di Mina", "Melempar jumrah", "Thawaf wada'"],
+          "catatan": "Meninggalkan wajib wajib membayar dam"
+        },
+        "nikah": {
+          "rukun": ["Calon suami", "Calon istri", "Wali", "Dua saksi laki-laki", "Sighat (ijab qabul)"],
+          "syarat_wali": ["Laki-laki", "Baligh", "Berakal", "Merdeka", "Islam", "Adil"],
+          "catatan": "Wali mutlak diperlukan, tanpa wali nikah tidak sah"
+        },
+        "jenazah": {
+          "fardhu_kifayah": ["Memandikan", "Mengkafani", "Menshalatkan", "Menguburkan"],
+          "rukun_shalat_jenazah": ["Niat", "Berdiri", "Takbir 4 kali", "Membaca Al-Fatihah", "Shalawat", "Doa untuk mayit", "Salam"]
+        }
+      },
+      "penyebaran": ["Indonesia", "Malaysia", "Brunei", "Singapura", "Thailand Selatan", "Filipina Selatan", "Mesir", "Yaman", "Somalia", "Kenya"]
+    },
+    "hanbali": {
+      "imam": {
+        "nama": "Ahmad bin Muhammad bin Hanbal",
+        "lahir": "164 H / 780 M di Baghdad",
+        "wafat": "241 H / 855 M di Baghdad",
+        "gelar": "Imam Ahl al-Sunnah",
+        "guru": ["Imam Syafi'i", "Sufyan bin Uyainah", "Yahya bin Sa'id al-Qaththan"],
+        "murid_utama": ["Bukhari", "Muslim", "Abu Dawud", "Shalih bin Ahmad", "Abdullah bin Ahmad"],
+        "biografi": "Imam Ahmad bin Hanbal adalah imam mazhab keempat dan ahli hadits terbesar. Beliau menghafal lebih dari satu juta hadits. Dikenal dengan keteguhannya menghadapi cobaan (mihnah) tentang kemakhlukan Al-Quran di masa Khalifah Al-Ma'mun."
+      },
+      "metodologi": {
+        "sumber_hukum": [
+          "Al-Quran",
+          "Hadits (termasuk hadits dhaif untuk fadhail dan hukum jika tidak ada yang lain)",
+          "Fatwa Sahabat",
+          "Ijma'",
+          "Qiyas (digunakan dengan sangat hati-hati)"
+        ],
+        "ciri_khas": "Mazhab Hanbali sangat berpegang teguh pada nash (teks Al-Quran dan Hadits) dan fatwa sahabat. Penggunaan qiyas sangat terbatas dan hanya dalam kondisi darurat.",
+        "prinsip_utama": [
+          "Berpegang teguh pada nash",
+          "Mengutamakan hadits meskipun dhaif daripada qiyas",
+          "Fatwa sahabat sebagai hujjah",
+          "Minimalisasi penggunaan ra'yu"
+        ]
+      },
+      "kitab_utama": [
+        {
+          "judul": "Al-Musnad",
+          "penulis": "Imam Ahmad",
+          "deskripsi": "Kumpulan hadits terbesar dengan lebih dari 27.000 hadits"
+        },
+        {
+          "judul": "Al-Mughni",
+          "penulis": "Ibn Qudamah",
+          "deskripsi": "Ensiklopedia fiqih perbandingan dari perspektif Hanbali"
+        },
+        {
+          "judul": "Al-Kafi",
+          "penulis": "Ibn Qudamah",
+          "deskripsi": "Ringkasan fiqih Hanbali yang komprehensif"
+        },
+        {
+          "judul": "Zad al-Ma'ad",
+          "penulis": "Ibn Qayyim al-Jauziyyah",
+          "deskripsi": "Kitab tentang petunjuk Nabi dalam berbagai aspek kehidupan"
+        },
+        {
+          "judul": "Majmu' al-Fatawa",
+          "penulis": "Ibn Taimiyyah",
+          "deskripsi": "Kumpulan fatwa komprehensif dalam berbagai bidang"
+        }
+      ],
+      "hukum_fiqih": {
+        "thaharah": {
+          "wudhu": {
+            "fardhu": ["Membasuh wajah (termasuk berkumur dan istinsyaq)", "Membasuh kedua tangan sampai siku", "Mengusap seluruh kepala (termasuk kedua telinga)", "Membasuh kedua kaki sampai mata kaki", "Tertib", "Muwalah"],
+            "yang_membatalkan": ["Keluar sesuatu dari qubul atau dubur", "Keluar najis dari badan", "Hilang akal", "Menyentuh kemaluan tanpa penghalang", "Memakan daging unta", "Memandikan mayit"],
+            "catatan": "Mazhab Hanbali memasukkan berkumur, istinsyaq, dan mengusap telinga sebagai bagian wajib dari wudhu"
+          },
+          "mandi_wajib": {
+            "fardhu": ["Niat", "Meratakan air ke seluruh tubuh"],
+            "sebab": ["Keluar mani", "Bertemunya dua khitan", "Haidh", "Nifas", "Mati", "Masuk Islam"]
+          }
+        },
+        "shalat": {
+          "rukun": ["Berdiri bagi yang mampu", "Takbiratul ihram", "Membaca Al-Fatihah", "Ruku'", "I'tidal", "Sujud", "Bangkit dari sujud", "Duduk antara dua sujud", "Tuma'ninah", "Tasyahhud akhir", "Shalawat atas Nabi", "Salam"],
+          "catatan": [
+            "Makan daging unta membatalkan wudhu",
+            "Diutamakan mengangkat tangan saat takbir"
+          ]
+        },
+        "zakat": {
+          "catatan_khusus": "Mazhab Hanbali sangat ketat dalam zakat, termasuk zakat perhiasan yang dipakai"
+        },
+        "puasa": {
+          "hal_yang_dibolehkan": ["Berkumur dan istinsyaq dengan tidak berlebihan", "Mencicipi makanan tanpa menelan", "Bersiwak sepanjang hari"],
+          "catatan": "Sangat berpegang pada hadits dalam masalah puasa"
+        },
+        "nikah": {
+          "rukun": ["Suami", "Istri", "Wali", "Dua saksi", "Sighat"],
+          "catatan": "Mazhab Hanbali sangat ketat dalam syarat pernikahan"
+        }
+      },
+      "penyebaran": ["Arab Saudi", "Qatar", "Kuwait", "Uni Emirat Arab", "Palestina"]
+    }
+  },
+  "perbandingan_praktis": {
+    "mengusap_kepala_wudhu": {
+      "hanafi": "Cukup 1/4 kepala",
+      "maliki": "Wajib seluruh kepala",
+      "syafii": "Cukup sebagian kecil",
+      "hanbali": "Wajib seluruh kepala termasuk telinga"
+    },
+    "menyentuh_wanita": {
+      "hanafi": "Tidak membatalkan wudhu",
+      "maliki": "Membatalkan jika dengan syahwat",
+      "syafii": "Membatalkan wudhu secara mutlak",
+      "hanbali": "Membatalkan jika dengan syahwat"
+    },
+    "posisi_tangan_shalat": {
+      "hanafi": "Di bawah pusar",
+      "maliki": "Dilepas di samping (sadl)",
+      "syafii": "Di dada",
+      "hanbali": "Di dada atau di bawah pusar"
+    },
+    "qunut_subuh": {
+      "hanafi": "Tidak disunnahkan kecuali nazilah",
+      "maliki": "Sunnah sebelum ruku'",
+      "syafii": "Sunnah muakkadah setelah ruku'",
+      "hanbali": "Tidak disunnahkan kecuali nazilah"
+    },
+    "membaca_basmalah_fatihah": {
+      "hanafi": "Pelan (sirr)",
+      "maliki": "Tidak dibaca sama sekali menurut pendapat masyhur",
+      "syafii": "Keras (jahr) di shalat jahriyyah",
+      "hanbali": "Pelan (sirr)"
+    },
+    "membaca_amin": {
+      "hanafi": "Pelan",
+      "maliki": "Pelan",
+      "syafii": "Keras di shalat jahriyyah",
+      "hanbali": "Keras di shalat jahriyyah"
+    }
+  },
+  "adab_ikhtilaf": {
+    "prinsip": [
+      "Perbedaan mazhab adalah rahmat dan kekayaan khazanah Islam",
+      "Tidak boleh mencela mazhab lain",
+      "Boleh taqlid kepada mazhab manapun yang mu'tabar",
+      "Dalam masalah furu' (cabang), perbedaan adalah hal yang wajar",
+      "Semua imam mazhab sepakat dalam masalah ushul (pokok)"
+    ],
+    "kutipan_ulama": [
+      "Imam Syafi'i: 'Pendapatku benar tapi mungkin salah, pendapat orang lain salah tapi mungkin benar'",
+      "Imam Ahmad: 'Jangan taqlid kepadaku, dan jangan taqlid kepada Malik, Syafi'i, Auza'i, atau Tsauri, tapi ambillah dari sumber yang mereka ambil'",
+      "Imam Malik: 'Setiap orang bisa diambil dan ditolak pendapatnya, kecuali penghuni kubur ini (Rasulullah SAW)'"
+    ]
+  }
+}
