@@ -1,24 +1,26 @@
 # Core dependencies
-flask==3.0.0
-requests==2.31.0
-python-dotenv==1.0.0
+flask>=3.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
 
-# RAG & Vector Database
-chromadb==0.4.22
-sentence-transformers==2.2.2
-langchain==0.1.0
-langchain-community==0.0.10
-langchain-groq==0.0.1
+# RAG & Vector Database - Use versions with pre-built wheels
+chromadb>=0.4.0,<0.5.0
+sentence-transformers>=2.2.0
+huggingface-hub>=0.20.0
+transformers>=4.35.0
+tokenizers>=0.15.0
 
 # Groq API
-groq==0.4.2
+groq>=0.4.0
 
-# Utilities
-pydantic==2.5.3
-httpx==0.26.0
-numpy==1.26.3
-tiktoken==0.5.2
+# Utilities - Use flexible versions with pre-built wheels
+pydantic>=2.0.0
+httpx>=0.25.0
+numpy>=1.24.0
 
-# Async support
-aiohttp==3.9.1
-asyncio-throttle==1.0.2
+# Web UI
+streamlit>=1.29.0
+
+# Additional required
+torch>=2.0.0
+pillow>=10.0.0
