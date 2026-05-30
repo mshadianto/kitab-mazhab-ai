@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mshadianto.github.io/kitab-mazhab-ai/sitemap.xml

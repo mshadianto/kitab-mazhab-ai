@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Segoe UI, Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1014"/>
+      <stop offset="1" stop-color="#11181f"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#15a37a"/>
+      <stop offset="1" stop-color="#d9a441"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.15" cy="0.1" r="0.6">
+      <stop offset="0" stop-color="#0d7a5f" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#0d7a5f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="180" font-size="80">🕌</text>
+  <text x="190" y="170" fill="#e7eef3" font-size="44" font-weight="800">Kitab Mazhab AI</text>
+  <text x="80" y="320" fill="#ffffff" font-size="74" font-weight="800">Learn the four <tspan fill="url(#grad)">madhāhib</tspan></text>
+  <text x="80" y="410" fill="#ffffff" font-size="74" font-weight="800">— right inside WhatsApp.</text>
+  <text x="80" y="490" fill="#9bb0bf" font-size="34">Open-source Agentic RAG · Hanafi · Maliki · Shafi'i · Hanbali</text>
+  <g transform="translate(80,540)">
+    <rect width="290" height="56" rx="28" fill="#0d7a5f"/>
+    <text x="145" y="37" fill="#fff" font-size="26" font-weight="700" text-anchor="middle">⭐ Star on GitHub</text>
+  </g>
+  <g transform="translate(390,540)">
+    <rect width="220" height="56" rx="28" fill="none" stroke="#23303b" stroke-width="2"/>
+    <text x="110" y="37" fill="#9bb0bf" font-size="26" font-weight="600" text-anchor="middle">💬 WhatsApp</text>
+  </g>
+</svg>

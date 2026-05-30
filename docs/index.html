@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kitab Mazhab AI — Learn the Four Madhāhib on WhatsApp</title>
+<meta name="description" content="An open-source Agentic RAG assistant to learn the four classical Islamic schools of jurisprudence (Hanafi, Maliki, Shafi'i, Hanbali) — right inside WhatsApp." />
+<link rel="canonical" href="https://mshadianto.github.io/kitab-mazhab-ai/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kitab Mazhab AI" />
+<meta property="og:description" content="Ask about Hanafi, Maliki, Shafi'i, or Hanbali fiqh in plain language. Get a sourced, context-aware answer in seconds — on WhatsApp." />
+<meta property="og:url" content="https://mshadianto.github.io/kitab-mazhab-ai/" />
+<meta property="og:image" content="https://mshadianto.github.io/kitab-mazhab-ai/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0d7a5f" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%8C%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Kitab Mazhab AI",
+  "applicationCategory":"EducationalApplication",
+  "operatingSystem":"WhatsApp, Web",
+  "description":"An open-source Agentic RAG assistant to learn the four classical Islamic schools of jurisprudence inside WhatsApp.",
+  "license":"https://opensource.org/licenses/MIT",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0b1014;--bg-soft:#11181f;--card:#151e26;--border:#23303b;
+    --text:#e7eef3;--muted:#9bb0bf;--green:#25d366;--emerald:#0d7a5f;
+    --emerald-2:#15a37a;--gold:#d9a441;--violet:#8a5cf6;
+    --radius:16px;--maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  code,pre,.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .section{padding:84px 0}
+  .section h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .section .lead{color:var(--muted);max-width:640px;margin-bottom:42px;font-size:1.05rem}
+  .eyebrow{color:var(--emerald-2);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+
+  .glow{position:fixed;inset:0;z-index:-1;pointer-events:none}
+  .glow::before,.glow::after{content:"";position:absolute;border-radius:50%;filter:blur(120px);opacity:.32}
+  .glow::before{width:560px;height:560px;background:var(--emerald);top:-180px;left:-120px}
+  .glow::after{width:520px;height:520px;background:var(--violet);top:240px;right:-160px;opacity:.2}
+
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,16,20,.7);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em}
+  .brand .logo{font-size:1.35rem}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a:not(.btn){color:var(--muted);font-size:.93rem;font-weight:500;transition:color .2s}
+  .nav-links a:not(.btn):hover{color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;padding:10px 18px;border-radius:999px;transition:transform .15s,box-shadow .2s,background .2s;cursor:pointer;border:0}
+  .btn-primary{background:linear-gradient(135deg,var(--emerald-2),var(--emerald));color:#fff;box-shadow:0 8px 24px rgba(13,122,95,.4)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(13,122,95,.55)}
+  .btn-ghost{background:var(--card);color:var(--text);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--emerald-2);transform:translateY(-2px)}
+  .lang{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--card)}
+  .lang button{background:transparent;border:0;color:var(--muted);font-size:.8rem;font-weight:700;padding:6px 12px;cursor:pointer;transition:.2s}
+  .lang button.active{background:var(--emerald-2);color:#fff}
+  @media(max-width:780px){.nav-links a:not(.btn){display:none}}
+
+  .hero{padding:72px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  @media(max-width:880px){.hero{grid-template-columns:1fr;gap:40px;padding:48px 0}}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .pill{font-size:.76rem;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+  .pill.green{color:var(--green);border-color:rgba(37,211,102,.35)}
+  .pill.gold{color:var(--gold);border-color:rgba(217,164,65,.35)}
+  .pill.violet{color:#b39bff;border-color:rgba(138,92,246,.35)}
+  h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:18px}
+  h1 .grad{background:linear-gradient(120deg,var(--emerald-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{color:var(--muted);font-size:1.15rem;max-width:520px;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .stars-note{font-size:.9rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+
+  .phone{justify-self:center;width:300px;max-width:100%;background:#0a0f0d;border:10px solid #1c2722;border-radius:38px;padding:14px 12px;box-shadow:0 30px 70px rgba(0,0,0,.55);position:relative}
+  .phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:90px;height:6px;background:#26332c;border-radius:99px}
+  .chat-head{display:flex;align-items:center;gap:10px;padding:16px 6px 12px}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--emerald-2),var(--emerald));display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+  .chat-head .nm{font-weight:700;font-size:.95rem}
+  .chat-head .st{font-size:.72rem;color:var(--green)}
+  .chat-body{background:#0c1512;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:330px;background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:18px 18px}
+  .bubble{max-width:85%;padding:9px 12px;border-radius:14px;font-size:.83rem;line-height:1.45;animation:pop .5s both}
+  .bubble.in{align-self:flex-start;background:#1b2620;border-bottom-left-radius:4px}
+  .bubble.out{align-self:flex-end;background:#075e54;border-bottom-right-radius:4px}
+  .bubble.out.tick::after{content:" ✓✓";color:#53bdeb;font-size:.7rem}
+  .bubble .mono{font-size:.76rem;color:#cfe7da}
+  @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center}
+  .stat .num{font-size:1.9rem;font-weight:800;background:linear-gradient(120deg,var(--emerald-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .lbl{color:var(--muted);font-size:.82rem;margin-top:4px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:transform .2s,border-color .2s}
+  .card:hover{transform:translateY(-4px);border-color:var(--emerald-2)}
+  .card .ic{font-size:1.7rem;margin-bottom:14px}
+  .card h3{font-size:1.08rem;font-weight:700;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.93rem}
+
+  .madhhab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:760px){.madhhab-grid{grid-template-columns:1fr 1fr}}
+  .mad{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden}
+  .mad::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+  .mad.h::before{background:#3aa0ff}.mad.m::before{background:var(--emerald-2)}
+  .mad.s::before{background:var(--gold)}.mad.b::before{background:var(--violet)}
+  .mad h3{font-size:1.05rem;margin-bottom:4px}
+  .mad .imam{font-size:.8rem;color:var(--muted);margin-bottom:12px}
+  .mad .pos{font-size:.86rem;color:var(--text);border-top:1px solid var(--border);padding-top:10px}
+  .mad .pos span{color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  @media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:22px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--emerald-2),var(--emerald));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff}
+  .step h3{font-size:1rem;margin:8px 0 6px}
+  .step p{color:var(--muted);font-size:.9rem}
+
+  .codeblock{background:#0a0f13;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:10px}
+  .codeblock .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--bg-soft)}
+  .codeblock .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .dot-r{background:#ff5f56}.dot-y{background:#ffbd2e}.dot-g{background:#27c93f}
+  .codeblock pre{padding:18px;overflow-x:auto;font-size:.85rem;line-height:1.7;color:#cfe1d8}
+  .codeblock .cmt{color:#5d7387}
+  .codeblock .grn{color:var(--green)}
+
+  .disclaimer{background:linear-gradient(135deg,rgba(217,164,65,.08),rgba(217,164,65,.02));border:1px solid rgba(217,164,65,.3);border-radius:var(--radius);padding:24px 26px;display:flex;gap:16px;align-items:flex-start}
+  .disclaimer .ic{font-size:1.6rem}
+  .disclaimer p{color:#e9d9b8;font-size:.95rem}
+
+  .cta-band{background:linear-gradient(135deg,var(--emerald),var(--emerald-2));border-radius:24px;padding:54px 40px;text-align:center;position:relative;overflow:hidden}
+  .cta-band h2{color:#fff;font-size:clamp(1.6rem,3.6vw,2.4rem);margin-bottom:12px}
+  .cta-band p{color:rgba(255,255,255,.9);max-width:520px;margin:0 auto 26px}
+  .cta-band .btn-ghost{background:#fff;color:var(--emerald);border:0}
+  .cta-band .btn-ghost:hover{transform:translateY(-2px)}
+
+  footer{border-top:1px solid var(--border);padding:42px 0;color:var(--muted)}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{font-size:.9rem;transition:color .2s}.foot-links a:hover{color:var(--text)}
+  .quote{font-style:italic;color:var(--muted);text-align:center;max-width:560px;margin:30px auto 0;font-size:.95rem}
+
+  .center{text-align:center}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+  .reveal.show{opacity:1;transform:none}
+  [data-i18n]{transition:opacity .15s}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="logo">🕌</span> Kitab Mazhab AI</a>
+    <nav class="nav-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#madhahib" data-i18n="nav.madhahib">Madhāhib</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#start" data-i18n="nav.start">Quick Start</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="id">ID</button>
+      </div>
+      <a class="btn btn-primary" href="https://github.com/mshadianto/kitab-mazhab-ai" target="_blank" rel="noopener"><span data-i18n="nav.star">⭐ Star on GitHub</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="wrap hero">
+  <div>
+    <div class="badges">
+      <span class="pill violet">🧠 Agentic RAG</span>
+      <span class="pill green">💬 WhatsApp</span>
+      <span class="pill gold" data-i18n="hero.pill.schools">📚 4 Madhāhib</span>
+      <span class="pill">⚡ Groq · Llama 3.3</span>
+    </div>
+    <h1 data-i18n="hero.title">Learn the four <span class="grad">madhāhib</span> — right inside WhatsApp.</h1>
+    <p class="sub" data-i18n="hero.sub">An open-source Agentic RAG assistant. Ask about Hanafi, Maliki, Shafi'i, or Hanbali fiqh in plain language and get a <strong>sourced, context-aware</strong> answer in seconds.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://github.com/mshadianto/kitab-mazhab-ai" target="_blank" rel="noopener"><span data-i18n="nav.star">⭐ Star on GitHub</span></a>
+      <a class="btn btn-ghost" href="#start" data-i18n="hero.cta2">🚀 Quick Start</a>
+    </div>
+    <div class="stars-note" data-i18n="hero.note">⭐ If this helps you, a star is the #1 way to support the work.</div>
+  </div>
+
+  <div class="phone" aria-hidden="true">
+    <div class="chat-head">
+      <div class="avatar">🕌</div>
+      <div>
+        <div class="nm">Kitab Mazhab AI</div>
+        <div class="st">● online</div>
+      </div>
+    </div>
+    <div class="chat-body">
+      <div class="bubble out tick" style="animation-delay:.1s" data-i18n="chat.q1">What's the difference in hand position during prayer between the madhhabs?</div>
+      <div class="bubble in" style="animation-delay:.5s">
+        <strong data-i18n="chat.a1.h">Hand placement (qabḍ) while standing:</strong><br>
+        <span class="mono">• Hanafi — below the navel<br>• Maliki — released at the sides (sadl)<br>• Shafi'i — on the chest<br>• Hanbali — chest or below navel</span><br>
+        <span data-i18n="chat.a1.note">Each is derived from different narrations; all valid within their schools. 📚</span>
+      </div>
+      <div class="bubble out tick" style="animation-delay:1s" data-i18n="chat.q2">Who founded the Shafi'i school?</div>
+      <div class="bubble in" style="animation-delay:1.4s" data-i18n="chat.a2">Imam Muhammad ibn Idris al-Shafi'i (150–204 AH)…</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="wrap" style="padding-top:0">
+  <div class="stats reveal">
+    <div class="stat"><div class="num">4</div><div class="lbl" data-i18n="stat.schools">Classical madhāhib</div></div>
+    <div class="stat"><div class="num">7+</div><div class="lbl" data-i18n="stat.domains">Fiqh domains covered</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl" data-i18n="stat.langs">Languages (ID / EN)</div></div>
+    <div class="stat"><div class="num">MIT</div><div class="lbl" data-i18n="stat.license">Open-source license</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="wrap section">
+  <div class="eyebrow reveal" data-i18n="why.eyebrow">Why this exists</div>
+  <h2 class="reveal" data-i18n="why.title">Classical fiqh, turned into a conversation.</h2>
+  <p class="lead reveal" data-i18n="why.lead">Reliable, structured knowledge about the four madhāhib is scattered across dense classical texts that are hard to search and harder to compare. Most people don't have a scholar on speed-dial to ask "how does wudu differ between Hanafi and Shafi'i?"</p>
+  <div class="grid">
+    <div class="card reveal"><div class="ic">📖</div><h3 data-i18n="why.c1.h">Source-grounded</h3><p data-i18n="why.c1.p">Answers come <strong>only</strong> from a curated knowledge base of the four schools — not from the model's imagination.</p></div>
+    <div class="card reveal"><div class="ic">🔍</div><h3 data-i18n="why.c2.h">Retrieval-Augmented</h3><p data-i18n="why.c2.p">A RAG engine retrieves the right passages first, dramatically reducing hallucination.</p></div>
+    <div class="card reveal"><div class="ic">📱</div><h3 data-i18n="why.c3.h">Where people already are</h3><p data-i18n="why.c3.p">Delivered through the app 2 billion people use every day — WhatsApp. No new app to install.</p></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="wrap section">
+  <div class="eyebrow reveal" data-i18n="feat.eyebrow">Features</div>
+  <h2 class="reveal" data-i18n="feat.title">Everything you need to study the schools.</h2>
+  <div class="grid">
+    <div class="card reveal"><div class="ic">🧠</div><h3 data-i18n="feat.1.h">Agentic RAG</h3><p data-i18n="feat.1.p">Multi-tool reasoning that retrieves the right knowledge before answering.</p></div>
+    <div class="card reveal"><div class="ic">⚖️</div><h3 data-i18n="feat.2.h">Four schools, side by side</h3><p data-i18n="feat.2.p">Hanafi, Maliki, Shafi'i, Hanbali — rulings, evidences, and where they differ.</p></div>
+    <div class="card reveal"><div class="ic">🕋</div><h3 data-i18n="feat.3.h">Broad fiqh coverage</h3><p data-i18n="feat.3.p">Purification, prayer, zakat, fasting, hajj, marriage, and transactions (muʿāmalāt).</p></div>
+    <div class="card reveal"><div class="ic">👤</div><h3 data-i18n="feat.4.h">Imam biographies</h3><p data-i18n="feat.4.p">Lives, teachers, students, and the major reference books of each school.</p></div>
+    <div class="card reveal"><div class="ic">🧵</div><h3 data-i18n="feat.5.h">Context-aware</h3><p data-i18n="feat.5.p">Remembers the conversation so follow-up questions just work.</p></div>
+    <div class="card reveal"><div class="ic">🌍</div><h3 data-i18n="feat.6.h">Multilingual</h3><p data-i18n="feat.6.p">Multilingual embeddings — ask in Indonesian or English.</p></div>
+  </div>
+</section>
+
+<!-- MADHAHIB -->
+<section id="madhahib" class="wrap section">
+  <div class="eyebrow reveal" data-i18n="mad.eyebrow">The four madhāhib</div>
+  <h2 class="reveal" data-i18n="mad.title">Compare, don't just read.</h2>
+  <p class="lead reveal" data-i18n="mad.lead">Example: hand placement (qabḍ) while standing in prayer — one question, four sourced answers.</p>
+  <div class="madhhab-grid">
+    <div class="mad h reveal"><h3>Hanafi</h3><div class="imam">Imam Abu Hanifa</div><div class="pos"><span data-i18n="mad.hands">Hands:</span> <span data-i18n="mad.h.pos">below the navel</span></div></div>
+    <div class="mad m reveal"><h3>Maliki</h3><div class="imam">Imam Malik</div><div class="pos"><span data-i18n="mad.hands">Hands:</span> <span data-i18n="mad.m.pos">released at the sides (sadl)</span></div></div>
+    <div class="mad s reveal"><h3>Shafi'i</h3><div class="imam">Imam al-Shafi'i</div><div class="pos"><span data-i18n="mad.hands">Hands:</span> <span data-i18n="mad.s.pos">on the chest</span></div></div>
+    <div class="mad b reveal"><h3>Hanbali</h3><div class="imam">Imam Ahmad</div><div class="pos"><span data-i18n="mad.hands">Hands:</span> <span data-i18n="mad.b.pos">chest or below navel</span></div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="wrap section">
+  <div class="eyebrow reveal" data-i18n="how.eyebrow">How it works</div>
+  <h2 class="reveal" data-i18n="how.title">From a WhatsApp message to a grounded answer.</h2>
+  <div class="steps">
+    <div class="step reveal"><h3 data-i18n="how.1.h">User asks</h3><p data-i18n="how.1.p">A WhatsApp message is forwarded by WAHA to the Flask webhook.</p></div>
+    <div class="step reveal"><h3 data-i18n="how.2.h">Agent reasons</h3><p data-i18n="how.2.p">The Agentic AI decides which tools to use and queries the RAG engine.</p></div>
+    <div class="step reveal"><h3 data-i18n="how.3.h">Retrieve</h3><p data-i18n="how.3.p">Relevant passages are pulled from ChromaDB over the curated knowledge base.</p></div>
+    <div class="step reveal"><h3 data-i18n="how.4.h">Answer</h3><p data-i18n="how.4.p">Groq / Llama 3.3 composes a grounded reply, sent back with context preserved.</p></div>
+  </div>
+</section>
+
+<!-- QUICK START -->
+<section id="start" class="wrap section">
+  <div class="eyebrow reveal" data-i18n="start.eyebrow">Quick Start</div>
+  <h2 class="reveal" data-i18n="start.title">Run it yourself in minutes.</h2>
+  <p class="lead reveal" data-i18n="start.lead">Prerequisites: Python 3.10+, a running WAHA server, and a free Groq API key.</p>
+  <div class="codeblock reveal">
+    <div class="bar"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></div>
+<pre><span class="cmt"># 1. Clone</span>
+git clone https://github.com/mshadianto/kitab-mazhab-ai.git
+cd kitab-mazhab-ai
+
+<span class="cmt"># 2. Set up environment</span>
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+<span class="cmt"># 3. Configure your keys, then run setup</span>
+cp .env.example .env
+python setup.py
+
+<span class="cmt"># 4. Run</span>
+python app.py
+
+<span class="cmt"># Then point WAHA's webhook at http://YOUR_SERVER:5000/webhook</span>
+<span class="cmt"># and send</span> <span class="grn">assalamualaikum</span> <span class="cmt">from WhatsApp 🎉</span></pre>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="wrap section" style="padding-top:0">
+  <div class="disclaimer reveal">
+    <div class="ic">⚠️</div>
+    <div>
+      <strong style="color:var(--gold)" data-i18n="disc.h">Important disclaimer</strong>
+      <p data-i18n="disc.p">This is an <strong>educational tool</strong>, not a source of fatwa. Answers are AI-generated from a curated knowledge base and may contain errors. For any matter affecting your worship or legal/financial decisions, please consult a qualified scholar (ʿālim / muftī) and verify against primary sources.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="wrap section" style="padding-top:0">
+  <div class="cta-band reveal">
+    <h2 data-i18n="cta.h">Help make classical scholarship accessible.</h2>
+    <p data-i18n="cta.p">Star the repo, share it, or add a topic to the knowledge base — the easiest, most valuable way to contribute.</p>
+    <a class="btn btn-ghost" href="https://github.com/mshadianto/kitab-mazhab-ai" target="_blank" rel="noopener"><span data-i18n="nav.star">⭐ Star on GitHub</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="brand"><span class="logo">🕌</span> Kitab Mazhab AI</div>
+      <nav class="foot-links">
+        <a href="https://github.com/mshadianto/kitab-mazhab-ai" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/mshadianto/kitab-mazhab-ai/issues" target="_blank" rel="noopener">Issues</a>
+        <a href="#start" data-i18n="nav.start">Quick Start</a>
+        <a href="https://groq.com/" target="_blank" rel="noopener">Groq</a>
+        <a href="https://waha.devlike.pro/" target="_blank" rel="noopener">WAHA</a>
+      </nav>
+    </div>
+    <p class="quote" data-i18n="foot.quote">"Whoever Allah wishes good for, He gives them understanding of the religion." — Bukhari &amp; Muslim</p>
+    <p class="center" style="margin-top:18px;font-size:.85rem" data-i18n="foot.made">Made with ❤️ to help the ummah learn fiqh · MIT License</p>
+  </div>
+</footer>
+
+<script>
+  // ===== i18n =====
+  const I18N = {
+    id:{
+      "nav.features":"Fitur","nav.madhahib":"Mazhab","nav.how":"Cara kerja","nav.start":"Mulai Cepat","nav.star":"⭐ Beri Star",
+      "hero.pill.schools":"📚 4 Mazhab",
+      "hero.title":"Pelajari empat <span class='grad'>mazhab</span> — langsung di WhatsApp.",
+      "hero.sub":"Asisten Agentic RAG open-source. Tanyakan fiqih Hanafi, Maliki, Syafi'i, atau Hanbali dengan bahasa sehari-hari dan dapatkan jawaban <strong>bersumber & sesuai konteks</strong> dalam hitungan detik.",
+      "hero.cta2":"🚀 Mulai Cepat",
+      "hero.note":"⭐ Kalau bermanfaat, memberi star adalah cara terbaik mendukung proyek ini.",
+      "chat.q1":"Apa perbedaan posisi tangan saat shalat antar mazhab?",
+      "chat.a1.h":"Posisi tangan (qabḍ) saat berdiri:",
+      "chat.a1.note":"Masing-masing bersandar pada riwayat berbeda; semuanya sah dalam mazhabnya. 📚",
+      "chat.q2":"Siapa pendiri mazhab Syafi'i?",
+      "chat.a2":"Imam Muhammad bin Idris asy-Syafi'i (150–204 H)…",
+      "stat.schools":"Mazhab klasik","stat.domains":"Bab fiqih tercakup","stat.langs":"Bahasa (ID / EN)","stat.license":"Lisensi open-source",
+      "why.eyebrow":"Mengapa ini ada","why.title":"Fiqih klasik, diubah jadi percakapan.",
+      "why.lead":"Pengetahuan yang andal dan terstruktur tentang empat mazhab tersebar di kitab-kitab klasik yang sulit dicari dan lebih sulit dibandingkan. Kebanyakan orang tidak punya ulama yang bisa langsung ditanya \"bagaimana wudu berbeda antara Hanafi dan Syafi'i?\"",
+      "why.c1.h":"Bersumber","why.c1.p":"Jawaban diambil <strong>hanya</strong> dari basis pengetahuan terkurasi keempat mazhab — bukan karangan model.",
+      "why.c2.h":"Retrieval-Augmented","why.c2.p":"Mesin RAG mengambil bagian yang tepat lebih dulu, sehingga sangat mengurangi halusinasi.",
+      "why.c3.h":"Di tempat orang sudah berada","why.c3.p":"Lewat aplikasi yang dipakai 2 miliar orang setiap hari — WhatsApp. Tanpa instal aplikasi baru.",
+      "feat.eyebrow":"Fitur","feat.title":"Semua yang Anda butuhkan untuk mempelajari mazhab.",
+      "feat.1.h":"Agentic RAG","feat.1.p":"Penalaran multi-tool yang mengambil pengetahuan tepat sebelum menjawab.",
+      "feat.2.h":"Empat mazhab berdampingan","feat.2.p":"Hanafi, Maliki, Syafi'i, Hanbali — hukum, dalil, dan letak perbedaannya.",
+      "feat.3.h":"Cakupan fiqih luas","feat.3.p":"Thaharah, shalat, zakat, puasa, haji, nikah, dan muamalah.",
+      "feat.4.h":"Biografi imam","feat.4.p":"Kehidupan, guru, murid, dan kitab rujukan utama tiap mazhab.",
+      "feat.5.h":"Sadar konteks","feat.5.p":"Mengingat percakapan sehingga pertanyaan lanjutan langsung nyambung.",
+      "feat.6.h":"Multibahasa","feat.6.p":"Embedding multibahasa — bertanya dalam bahasa Indonesia atau Inggris.",
+      "mad.eyebrow":"Empat mazhab","mad.title":"Bandingkan, bukan sekadar membaca.",
+      "mad.lead":"Contoh: posisi tangan (qabḍ) saat berdiri dalam shalat — satu pertanyaan, empat jawaban bersumber.",
+      "mad.hands":"Tangan:","mad.h.pos":"di bawah pusar","mad.m.pos":"diurai di samping (sadl)","mad.s.pos":"di atas dada","mad.b.pos":"di dada atau bawah pusar",
+      "how.eyebrow":"Cara kerja","how.title":"Dari pesan WhatsApp ke jawaban bersumber.",
+      "how.1.h":"Pengguna bertanya","how.1.p":"Pesan WhatsApp diteruskan WAHA ke webhook Flask.",
+      "how.2.h":"Agen bernalar","how.2.p":"Agentic AI menentukan tool yang dipakai dan memanggil mesin RAG.",
+      "how.3.h":"Pengambilan","how.3.p":"Bagian relevan diambil dari ChromaDB atas basis pengetahuan terkurasi.",
+      "how.4.h":"Menjawab","how.4.p":"Groq / Llama 3.3 menyusun jawaban bersumber, dikirim kembali dengan konteks terjaga.",
+      "start.eyebrow":"Mulai Cepat","start.title":"Jalankan sendiri dalam hitungan menit.",
+      "start.lead":"Prasyarat: Python 3.10+, server WAHA yang berjalan, dan Groq API key gratis.",
+      "disc.h":"Penting: penafian","disc.p":"Ini adalah <strong>alat edukasi</strong>, bukan sumber fatwa. Jawaban dihasilkan AI dari basis pengetahuan terkurasi dan dapat memuat kesalahan. Untuk urusan ibadah atau hukum/finansial, mohon rujuk ke ulama berkompeten (ʿālim / muftī) dan verifikasi ke sumber primer.",
+      "cta.h":"Bantu agar khazanah klasik mudah diakses.","cta.p":"Beri star repo, bagikan, atau tambahkan topik ke basis pengetahuan — cara kontribusi termudah dan paling bernilai.",
+      "foot.quote":"\"Barang siapa Allah kehendaki kebaikan, Dia pahamkan ia dalam agama.\" — Bukhari & Muslim",
+      "foot.made":"Dibuat dengan ❤️ untuk membantu umat belajar fiqih · Lisensi MIT"
+    }
+  };
+
+  const els = document.querySelectorAll('[data-i18n]');
+  const EN = {};
+  els.forEach(el=>{ EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+
+  function setLang(lang){
+    const dict = lang==='id' ? I18N.id : EN;
+    els.forEach(el=>{
+      const k = el.getAttribute('data-i18n');
+      const v = (lang==='id') ? (I18N.id[k] ?? EN[k]) : EN[k];
+      if(v!=null) el.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+    try{ localStorage.setItem('kmai-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click', ()=>setLang(b.dataset.lang));
+  });
+  // init: saved pref → browser → en
+  let init='en';
+  try{
+    const saved = localStorage.getItem('kmai-lang');
+    init = saved || ((navigator.language||'').startsWith('id') ? 'id' : 'en');
+  }catch(e){}
+  if(init==='id') setLang('id');
+
+  // ===== Scroll reveal =====
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%3*0.07)+'s'; io.observe(el); });
+</script>
+</body>
+</html>
